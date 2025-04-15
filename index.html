@@ -5365,9 +5365,13 @@ var respecConfig = {
     <span its-locale-filter-list="zh-hant" lang="zh-hant">詞彙表</span>
   </h2>
 
-  <div class="input">
-    <!-- <label for="search">Search:</label> -->
-    <input placeholder="Search" type="text" id="search">
+  <div class="input search-container">
+    <label for="search" class="visually-hidden">Search glossary terms</label>
+    <div class="search-input-wrapper">
+      <input placeholder="Search" type="text" id="search" aria-describedby="search-results-count">
+      <button id="clear-search" aria-label="Clear search" title="Clear search">×</button>
+    </div>
+    <div id="search-results-count" aria-live="polite" class="search-results-count"></div>
   </div>
 
   <table class="appendix glossary" id="filter">
@@ -6330,24 +6334,91 @@ var respecConfig = {
 </section>
 
 <script>
-  const search = document.getElementById('search')
-  const table = document.getElementById('filter')
-  const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.getElementById('search');
+  const clearButton = document.getElementById('clear-search');
+  const resultsCount = document.getElementById('search-results-count');
+  const table = document.getElementById('filter');
+  const trArray = Array.from(table.querySelectorAll('tbody tr'));
 
-  const filter = event => {
-    const searchTerm = event.target.value.toLowerCase()
+  // Store original text for highlighting
+  trArray.forEach(row => {
+    const cells = Array.from(row.getElementsByTagName('td'));
+    cells.forEach(cell => {
+      cell.dataset.originalText = cell.innerHTML;
+    });
+  });
+
+  const debounce = (func, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const highlightText = (text, searchTerm) => {
+    if (!searchTerm) return text;
+    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  };
+
+  const filter = debounce(event => {
+    const searchTerm = event.target.value.trim().toLowerCase();
+    let matchCount = 0;
+
     trArray.forEach(row => {
-      row.classList.add('hidden')
-      const tdArray = Array.prototype.slice.call(row.getElementsByTagName('td'))
-      tdArray.forEach(cell => {
-        if (cell.innerText.toLowerCase().indexOf(searchTerm) > -1) {
-          row.classList.remove('hidden')
-        }
-      })
-    })
-  }
+      const cells = Array.from(row.getElementsByTagName('td'));
+      let rowMatches = false;
 
-  search.addEventListener('keyup', filter, false)
+      cells.forEach(cell => {
+        const originalText = cell.dataset.originalText;
+        if (searchTerm && originalText.toLowerCase().includes(searchTerm)) {
+          cell.innerHTML = highlightText(originalText, searchTerm);
+          rowMatches = true;
+        } else {
+          cell.innerHTML = originalText;
+        }
+      });
+
+      if (searchTerm === '' || rowMatches) {
+        row.classList.remove('hidden');
+        if (searchTerm !== '') matchCount++;
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+
+    // Update results count
+    if (searchTerm === '') {
+      resultsCount.textContent = '';
+      clearButton.style.display = 'none';
+    } else {
+      resultsCount.textContent = `${matchCount} result${matchCount !== 1 ? 's' : ''} found`;
+      clearButton.style.display = 'block';
+    }
+  }, 200);
+
+  search.addEventListener('input', filter);
+
+  // Clear search
+  clearButton.addEventListener('click', () => {
+    search.value = '';
+    search.focus();
+    filter({ target: search });
+  });
+
+  // Handle keyboard navigation
+  search.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      search.value = '';
+      filter({ target: search });
+    }
+  });
+
+  // Initialize
+  clearButton.style.display = 'none';
+});
 </script>
 
 </body>

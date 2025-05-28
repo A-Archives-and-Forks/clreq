@@ -6,6 +6,7 @@ const LANG_LIST = ['en', 'zh-hant', 'zh-hans']
 
 const L10N = {
 	'en': {
+    // CSS selectors for elements that need text replacement
     selector: {
       'head > title': 'Requirements for Chinese Text Layout',
       '#abstract > h2': 'Abstract',
@@ -16,6 +17,7 @@ const L10N = {
       '.note-title': 'Note',
     },
 
+    // Prefix for figure captions (e.g., "Fig. 1", "Fig. 2")
     'fig': 'Fig. ',
 
     dt: {},
@@ -99,6 +101,11 @@ function arrayify(obj: any) {
 	return Array.from ? Array.from(obj) : Array.prototype.slice.call(obj)
 }
 
+/**
+ * Convenience function for querySelectorAll that returns a proper Array.
+ * @param selector - CSS selector string
+ * @returns Array of matching DOM elements
+ */
 function $$(selector: string) {
 	return arrayify(document.querySelectorAll(selector))
 }
@@ -145,11 +152,13 @@ function replaceBoilerplateText(lang: string) {
     })
   })
 
+  // Update figure captions and figure references with localized prefix
   $$('figcaption, .fig-ref')
   .forEach(function($elmt) {
   	Object.assign($elmt.firstChild, { textContent: l10n['fig'] })
 	})
 
+  // Update summary text in document details section
   $$('body > div.head > details > summary')
   .forEach(function($summary) {
   	let originalText = $summary.dataset.originalText || $summary.textContent.trim()
@@ -161,6 +170,7 @@ function replaceBoilerplateText(lang: string) {
     }
 	})
 
+  // Update definition terms (dt elements) in document metadata
   $$('body > div.head > details > dl > dt')
   .forEach(function($dt) {
     let originalText = $dt.dataset.originalText || $dt.textContent.trim()
@@ -171,6 +181,7 @@ function replaceBoilerplateText(lang: string) {
       $dt.dataset.originalText = originalText
     }
 
+    // Special handling for bug tracker links (dd elements contain HTML)
     if (originalText === 'Bug tracker:') {
       $dt.nextElementSibling.innerHTML = l10n.dd['Bug tracker:']
     }

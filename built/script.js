@@ -5,6 +5,7 @@
     const LANG_LIST = ["en", "zh-hant", "zh-hans"];
     const L10N = {
       "en": {
+        // CSS selectors for elements that need text replacement
         selector: {
           "head > title": "Requirements for Chinese Text Layout",
           "#abstract > h2": "Abstract",
@@ -14,6 +15,7 @@
           "#table-of-contents": "Table of Contents",
           ".note-title": "Note"
         },
+        // Prefix for figure captions (e.g., "Fig. 1", "Fig. 2")
         "fig": "Fig. ",
         dt: {},
         dd: {

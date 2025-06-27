@@ -406,3 +406,26 @@ mark {
   padding: 0 2px;
   border-radius: 2px;
 }
+
+section li[id] {
+  position: relative;
+}
+
+section li[id] > a.self-link {
+  color: inherit;
+  position: absolute;
+  left: -2.5em;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+section li[id]:hover > a.self-link {
+  opacity: .5;
+}
+
+section li[id] > a.self-link::before {
+  content: "§";
+  text-decoration: none;
+  color: black;
+}

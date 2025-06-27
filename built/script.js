@@ -147,6 +147,17 @@
       showAndHideLang(lang);
       replaceBoilerplateText(lang);
     };
+    function addSelfLinks() {
+      $$("li[id]").forEach(function($elmt) {
+        const elementId = $elmt.getAttribute("id");
+        if (elementId) {
+          const selfLink = document.createElement("a");
+          selfLink.className = "self-link";
+          selfLink.href = "#" + elementId;
+          $elmt.insertBefore(selfLink, $elmt.firstChild);
+        }
+      });
+    }
     function addLangAttr() {
       toggle$rootClass("all");
       LANG_LIST.forEach(function(lang) {
@@ -158,5 +169,6 @@
       });
     }
     addLangAttr();
+    addSelfLinks();
   }();
 })();

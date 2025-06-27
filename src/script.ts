@@ -199,6 +199,28 @@ window.switchLang = function(lang: string) {
 }
 
 /**
+ * Add self-link anchors for all p and li elements with id attributes
+ */
+function addSelfLinks() {
+  // Find all p and li elements that have an id attribute
+  $$('li[id]')
+  .forEach(function($elmt) {
+    // Get the id of the element
+    const elementId = $elmt.getAttribute('id')
+    
+    if (elementId) {
+      // Create the self-link anchor element
+      const selfLink = document.createElement('a')
+      selfLink.className = 'self-link'
+      selfLink.href = '#' + elementId
+      
+      // Insert the self-link anchor as the first child of the element
+      $elmt.insertBefore(selfLink, $elmt.firstChild)
+    }
+  })
+}
+
+/**
  * Add `lang` attribute wherever there is a its-locale-filter-list attribute.
  * This is done by js to reduce burden on editors
  * If there's already a lang attribute in the tag, that tag is skipped.
@@ -221,6 +243,7 @@ function addLangAttr() {
 }
 
 addLangAttr()
+addSelfLinks()
 }()
 
 export {};

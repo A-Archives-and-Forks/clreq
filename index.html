@@ -571,7 +571,7 @@ var respecConfig = {
   <p its-locale-filter-list="zh-hant" lang="zh-hant">直排時，西文字母與<a href="#term.european-numerals" class="termref">阿拉伯數字</a>的配置有以下三種方法：</p>
   <ol>
     <li id="id110">
-      <p its-locale-filter-list="en" lang="en" class="checkme"><span class="leadin">Setting Western text with Han character width monospace fonts</span>. Western alphas or European numerals follow each other, one at a time, in the same direction and orientation as the Han characters. This arrangement is usually adopted where the text contains a single letter or digit, or an acronym (such as <abbr title="Gross Domestic Product">GDP</abbr>).</p>
+      <p its-locale-filter-list="en" lang="en" class="checkme">Use a font containing glyphs with the same width as Han characters or use full-width characters, and arrange the letters in the same writing direction as Han characters without turning. This is often used when the Western letters and European numerals in the text are single characters or abbreviations (such as <abbr title="Gross Domestic Product">GDP</abbr>).</p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans">采用与汉字等宽的字体或全角字符，使用与汉字相同的书写方向依字母排列，无须转向。当文中的西文字母与阿拉伯数字为单独一字或为首字母缩略词时（如GDP），多使用这种方式配置。</p>
       <p its-locale-filter-list="zh-hant" lang="zh-hant">採用與漢字等寬之字體或全形字元，使用與漢字相同的書寫方向依字母排列，毋須轉向。當文中的西文字母與阿拉伯數字為單獨一字、或為首字母縮略詞時（如GDP），多使用這種方式配置。</p>
       <figure id="latin-normal-orientation">
@@ -586,7 +586,7 @@ var respecConfig = {
       </figure>
     </li>
     <li id="id111">
-      <p its-locale-filter-list="en" lang="en" class="checkme"><span class="leadin">Setting Western text with proportional fonts, rotated 90 degrees clockwise.</span> This approach is usually adopted where Western text compose a word or sentence. There is tracking or spacing between a Han character and an adjacent Western alpha or European numeral, up to a width of 1/4&nbsp;em, except at the line start or end.</p>
+      <p its-locale-filter-list="en" lang="en" class="checkme">Use proportional fonts and rotate the text 90° clockwise. This method is used when the Western text in the text is a general word, sentence, or European numerals with more than four digits. Use a spacing of no more than one-quarter of the width of a Han character between Han characters and Western letters or European numerals. However, when the Western text appears at the beginning or end of a line, no extra spacing is required.</p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans">采用比例字体，将文字顺时针旋转90°配置。当文中的西文为一般单词、语句或四位数以上的阿拉伯数字时，采用此方法配置。汉字与西文字母、阿拉伯数字间使用不多于四分之一个汉字宽的字距或空白。但西文出现在行首或行尾时，则无须加入空白。</p>
       <p its-locale-filter-list="zh-hant" lang="zh-hant">採用比例字體，將文字順時針旋轉90度配置。當文中的西字為一般單字詞、語句，或阿拉伯數在四位數以上時，採用此方法配置。漢字與西文字母、阿拉伯數字間使用不多於四分之一個漢字寬的字距或空白。但西文出現在行首或行尾時，則毋須加入空白。</p>
       <figure id="latin-90-clockwise-2">
@@ -601,7 +601,7 @@ var respecConfig = {
       </figure>
     </li>
     <li id="id112">
-      <p its-locale-filter-list="en" lang="en"><span class="leadin">Setting European numerals with proportional fonts in <a href="#term.horizontal-in-vertical" class="termref">horizontal-in-vertical orientation</a>.</span> This is primarily applied to two- or three-digit European numerals with their width matching or slightly exceeding the font size.</p>
+      <p its-locale-filter-list="en" lang="en">Setting European numerals with proportional fonts in <a href="#term.horizontal-in-vertical" class="termref">horizontal-in-vertical orientation</a>. This is primarily applied to two- or three-digit European numerals with their width matching or slightly exceeding the font size.</p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans">阿拉伯数字使用比例字体，以<a href="#term.horizontal-in-vertical" class="termref">纵中横排</a>（保持正常方向，横排）方式配置。主要应用于两至三位数的阿拉伯数字，其宽度与行幅相当，或稍微切出行幅。</p>
       <p its-locale-filter-list="zh-hant" lang="zh-hant">阿拉伯數字使用比例字體，以<a href="#term.horizontal-in-vertical" class="termref">縱中橫排</a>（保持正常方向，橫排）方式配置。主要應用於二至三位數的阿拉伯數字，其寬度與行幅相當，或稍微切出行幅。</p>
     </li>
@@ -5437,8 +5437,8 @@ var respecConfig = {
 
     <tbody>
       <tr id="term.european-numerals">
-        <td>阿拉伯數字</td>
-        <td>阿拉伯数字</td>
+        <td lang="zh-Hant">阿拉伯數字</td>
+        <td lang="zh-Hans">阿拉伯数字</td>
         <td>Ālābó shùzì</td>
         <td>European numerals/Arabic numerals/Hindu–Arabic numerals/European digits (in Unicode)</td>
         <td>
@@ -5455,8 +5455,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.type-area">
-        <td>版心</td>
-        <td>版心</td>
+        <td lang="zh-Hant">版心</td>
+        <td lang="zh-Hans">版心</td>
         <td>bǎnxīn</td>
         <td>type area</td>
         <td>
@@ -5467,8 +5467,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.halfwidth">
-        <td>半形</td>
-        <td>半角</td>
+        <td lang="zh-Hant">半形</td>
+        <td lang="zh-Hans">半角</td>
         <td>bànxíng/<wbr>bànjiǎo</td>
         <td>halfwidth</td>
         <td>
@@ -5481,8 +5481,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.punctuation-marks">
-        <td>標點符號</td>
-        <td>标点符号</td>
+        <td lang="zh-Hant">標點符號</td>
+        <td lang="zh-Hans">标点符号</td>
         <td>biāodiǎn fúhào</td>
         <td>punctuation marks</td>
         <td>
@@ -5492,8 +5492,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.punctuation-compression">
-        <td>標點符號擠壓</td>
-        <td>标点符号挤压</td>
+        <td lang="zh-Hant">標點符號擠壓</td>
+        <td lang="zh-Hans">标点符号挤压</td>
         <td>biāodiǎn fúhào jǐyā</td>
         <td>compression rules for consecutive punctuation marks</td>
         <td>
@@ -5504,8 +5504,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.indication-punctuation-marks">
-        <td>標號</td>
-        <td>标号</td>
+        <td lang="zh-Hant">標號</td>
+        <td lang="zh-Hans">标号</td>
         <td>biāohào</td>
         <td>indication punctuation marks</td>
         <td>
@@ -5515,8 +5515,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.phonetic-annotation">
-        <td>標音</td>
-        <td>标音</td>
+        <td lang="zh-Hant">標音</td>
+        <td lang="zh-Hans">标音</td>
         <td>biāoyīn</td>
         <td>phonetic annotation</td>
         <td>
@@ -5526,19 +5526,19 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.proportional">
-        <td>比例字體</td>
-        <td>比例字体</td>
+        <td lang="zh-Hant">比例字體</td>
+        <td lang="zh-Hans">比例字体</td>
         <td>bǐlì zìtǐ</td>
         <td>proportional font</td>
         <td>
-          <p its-locale-filter-list="en" lang="en">A proportional font (also called a variable-width font) is a font in which each character occupies only as much horizontal space as it needs. For example, in a proportional font the letter “i” is narrower than the letter “m”. This contrasts with a monospaced font, where every character has the same fixed width regardless of shape.</p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">比例字体（或可变宽度字体）是字体的一种分类，其中每个字符的宽度根据其笔画和外形量身定制。例如，在比例字体中，“i” 比 “m” 窄。与之相对的是等宽字体，等宽字体的每个字符占用相同的水平空间。</p>
+          <p its-locale-filter-list="en" lang="en">A proportional font (also called a variable-width font) is a font in which each character occupies only as much horizontal space as it needs. For example, in a proportional font the letter "i" is narrower than the letter "m". This contrasts with a monospaced font, where every character has the same fixed width regardless of shape.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">比例字体（或可变宽度字体）是字体的一种分类，其中每个字符的宽度根据其笔画和外形量身定制。例如，在比例字体中，"i" 比 "m" 窄。与之相对的是等宽字体，等宽字体的每个字符占用相同的水平空间。</p>
           <p its-locale-filter-list="zh-hant" lang="zh-hant">比例字體（或可變寬度字體）是字體的一種分類，其中每個字元的寬度根據其筆畫和外形量身定製。例如，在比例字體中，「i」 比 「m」 窄。與之相對的是等寬字體，等寬字體的每個字元占用相同的水平空間。</p>
         </td>
       </tr>
       <tr id="term.bleed">
-        <td>出血</td>
-        <td>出血</td>
+        <td lang="zh-Hant">出血</td>
+        <td lang="zh-Hans">出血</td>
         <td>chūxiě</td>
         <td>bleed</td>
         <td>
@@ -5548,8 +5548,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.big5">
-        <td>大五碼</td>
-        <td>大五码</td>
+        <td lang="zh-Hant">大五碼</td>
+        <td lang="zh-Hans">大五码</td>
         <td>Dàwǔmǎ</td>
         <td>Big5</td>
         <td>
@@ -5562,8 +5562,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.footer">
-        <td>地／地腳</td>
-        <td>地/地脚</td>
+        <td lang="zh-Hant">地／地腳</td>
+        <td lang="zh-Hans">地/地脚</td>
         <td>dì/dìjiǎo</td>
         <td>footer/foot/bottom margin</td>
         <td>
@@ -5573,24 +5573,24 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.point">
-        <td>點</td>
-        <td>点</td>
+        <td lang="zh-Hant">點</td>
+        <td lang="zh-Hans">点</td>
         <td>diǎn</td>
         <td>point (pt)</td>
         <td>
           <p its-locale-filter-list="en" lang="en">In typography, the point is the smallest unit of measure, used for measuring font size, leading, and other items on a printed page.
             The DTP point (desktop publishing point) as the de facto standard point is
             defined as 1⁄72 of an international inch (about 0.35146&nbsp;mm) and,
-            as with earlier American point sizes, is considered to be 1⁄12 of a pica.
+            as with earlier American point sizes, is considered to be 1⁄12 of a pica.
              <a href="https://en.wikipedia.org/wiki/Point_(typography)">[Definition from Wikipedia]</a>
           </p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">字号的一种计量单位，常用的英美点制下1点约为0.35146&nbsp;mm，也被音译作“磅（因）”。</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">字号的一种计量单位，常用的英美点制下1点约为0.35146&nbsp;mm，也被音译作"磅（因）"。</p>
           <p its-locale-filter-list="zh-hant" lang="zh-hant">字號的一種計量單位，常用的英美點制下1點約為0.35146&nbsp;mm，也被音譯作「磅（因）」。</p>
         </td>
       </tr>
       <tr id="term.pause-or-stop-punctuation-marks">
-        <td>點號</td>
-        <td>点号</td>
+        <td lang="zh-Hant">點號</td>
+        <td lang="zh-Hans">点号</td>
         <td>diǎnhào</td>
         <td>pause or stop punctuation marks</td>
         <td>
@@ -5600,8 +5600,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.line-foot">
-        <td>底端</td>
-        <td>底端</td>
+        <td lang="zh-Hant">底端</td>
+        <td lang="zh-Hans">底端</td>
         <td>dǐduān</td>
         <td>line foot</td>
         <td>
@@ -5612,8 +5612,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.line-head">
-      <td>頂端</td>
-        <td>顶端</td>
+      <td lang="zh-Hant">頂端</td>
+        <td lang="zh-Hans">顶端</td>
         <td>dǐngduān</td>
         <td>line head</td>
         <td>
@@ -5624,8 +5624,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.paragraph">
-        <td>段落</td>
-        <td>段落</td>
+        <td lang="zh-Hant">段落</td>
+        <td lang="zh-Hans">段落</td>
         <td>duànlùo</td>
         <td>paragraph</td>
         <td>
@@ -5638,8 +5638,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.alignment">
-        <td>對齊方式</td>
-        <td>对齐方式</td>
+        <td lang="zh-Hant">對齊方式</td>
+        <td lang="zh-Hans">对齐方式</td>
         <td>duìqí fāngshì</td>
         <td>alignment</td>
         <td>
@@ -5654,8 +5654,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.erhua">
-        <td>兒化音</td>
-        <td>儿化音</td>
+        <td lang="zh-Hant">兒化音</td>
+        <td lang="zh-Hans">儿化音</td>
         <td>érhuàyīn</td>
         <td>rhotacization of syllable finals</td>
         <td>
@@ -5666,8 +5666,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.traditional-chinese">
-        <td>繁體中文</td>
-        <td>繁体中文</td>
+        <td lang="zh-Hant">繁體中文</td>
+        <td lang="zh-Hans">繁体中文</td>
         <td>fántǐ Zhōngwén</td>
         <td>Traditional Chinese</td>
         <td>
@@ -5677,8 +5677,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.word-pinyin">
-        <td>分詞連寫</td>
-        <td>分词连写</td>
+        <td lang="zh-Hant">分詞連寫</td>
+        <td lang="zh-Hans">分词连写</td>
         <td>fēncí liánxiě</td>
         <td>words as the base units</td>
         <td>
@@ -5688,8 +5688,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.character-pinyin">
-        <td>分字連寫</td>
-        <td>分字连写</td>
+        <td lang="zh-Hant">分字連寫</td>
+        <td lang="zh-Hans">分字连写</td>
         <td>fēnzì liánxiě</td>
         <td>characters as the base units</td>
         <td>
@@ -5699,8 +5699,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.unbreakable">
-        <td>符號分離禁則</td>
-        <td>符号分离禁则</td>
+        <td lang="zh-Hant">符號分離禁則</td>
+        <td lang="zh-Hans">符号分离禁则</td>
         <td>fúhào fēnlí jìnzé</td>
         <td>prohibition rules for unbreakable punctuation</td>
         <td>
@@ -5710,8 +5710,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.widow">
-        <td>孤行</td>
-        <td>孤行</td>
+        <td lang="zh-Hant">孤行</td>
+        <td lang="zh-Hans">孤行</td>
         <td>gūháng</td>
         <td>widow</td>
         <td>
@@ -5721,8 +5721,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.orphan">
-        <td>孤字</td>
-        <td>孤字</td>
+        <td lang="zh-Hant">孤字</td>
+        <td lang="zh-Hans">孤字</td>
         <td>gūzì</td>
         <td>orphan</td>
         <td>
@@ -5732,8 +5732,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.line-height">
-        <td>行高</td>
-        <td>行高</td>
+        <td lang="zh-Hant">行高</td>
+        <td lang="zh-Hans">行高</td>
         <td>hánggāo</td>
         <td>line height</td>
         <td>
@@ -5743,8 +5743,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.interlinear-comments">
-        <td>行間批語</td>
-        <td>行间批语</td>
+        <td lang="zh-Hant">行間批語</td>
+        <td lang="zh-Hans">行间批语</td>
         <td>hángjiān pīyǔ</td>
         <td>interlinear comments</td>
         <td>
@@ -5754,8 +5754,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.ruby">
-        <td>行間注</td>
-        <td>行间注</td>
+        <td lang="zh-Hant">行間注</td>
+        <td lang="zh-Hans">行间注</td>
         <td>hángjiānzhù</td>
         <td>ruby</td>
         <td>
@@ -5765,8 +5765,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.line-adjustment">
-        <td>行內調整</td>
-        <td>行内调整</td>
+        <td lang="zh-Hant">行內調整</td>
+        <td lang="zh-Hans">行内调整</td>
         <td>hángnèitiáozhěng</td>
         <td>line adjustment</td>
         <td>
@@ -5776,8 +5776,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.line-breaking-rules">
-        <td>行首行尾禁則</td>
-        <td>行首行尾禁则</td>
+        <td lang="zh-Hant">行首行尾禁則</td>
+        <td lang="zh-Hans">行首行尾禁则</td>
         <td>hángshǒu hángwěi jìnzé</td>
         <td>prohibition rules for line start/end</td>
         <td>
@@ -5787,8 +5787,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.hanging-punctuation">
-        <td>行尾點號懸掛</td>
-        <td>行尾点号悬挂</td>
+        <td lang="zh-Hant">行尾點號懸掛</td>
+        <td lang="zh-Hans">行尾点号悬挂</td>
         <td>hángwěi diǎnhào xuánguà</td>
         <td>hanging punctuation marks for line end</td>
         <td>
@@ -5798,8 +5798,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.hanyu-pinyin">
-        <td>漢語拼音</td>
-        <td>汉语拼音</td>
+        <td lang="zh-Hant">漢語拼音</td>
+        <td lang="zh-Hans">汉语拼音</td>
         <td>Hànyǔ pīnyīn</td>
         <td>Hanyu Pinyin</td>
         <td>
@@ -5809,8 +5809,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.han-character">
-        <td>漢字</td>
-        <td>汉字</td>
+        <td lang="zh-Hant">漢字</td>
+        <td lang="zh-Hans">汉字</td>
         <td>Hànzì</td>
         <td>Chinese characters/<wbr>Han characters</td>
         <td>
@@ -5820,8 +5820,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.horizontal-writing-mode">
-        <td>橫排</td>
-        <td>横排</td>
+        <td lang="zh-Hant">橫排</td>
+        <td lang="zh-Hans">横排</td>
         <td>héngpái</td>
         <td>horizontal writing mode</td>
         <td>
@@ -5831,8 +5831,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.letterpress-printing">
-        <td>活字排版</td>
-        <td>活字排版</td>
+        <td lang="zh-Hant">活字排版</td>
+        <td lang="zh-Hans">活字排版</td>
         <td>huózì páibǎn</td>
         <td>letterpress printing</td>
         <td>
@@ -5842,8 +5842,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.simplified-chinese">
-        <td>簡體中文</td>
-        <td>简体中文</td>
+        <td lang="zh-Hant">簡體中文</td>
+        <td lang="zh-Hans">简体中文</td>
         <td>jiǎntǐ Zhōngwén</td>
         <td>Simplified Chinese</td>
         <td>
@@ -5853,8 +5853,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.brackets">
-        <td>夾注符號</td>
-        <td>夹注符号</td>
+        <td lang="zh-Hant">夾注符號</td>
+        <td lang="zh-Hans">夹注符号</td>
         <td>jiázhù fúhào</td>
         <td>Parenthetical punctuation</td>
         <td>
@@ -5864,8 +5864,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="closing-bracket">
-        <td>結束夾注符號</td>
-        <td>结束夹注符号</td>
+        <td lang="zh-Hant">結束夾注符號</td>
+        <td lang="zh-Hans">结束夹注符号</td>
         <td>jiéshù jiázhù fúhào</td>
         <td>closing bracket(s)</td>
         <td>
@@ -5875,8 +5875,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.medial">
-        <td>介音</td>
-        <td>介音</td>
+        <td lang="zh-Hant">介音</td>
+        <td lang="zh-Hans">介音</td>
         <td>jièyīn</td>
         <td>medial</td>
         <td>
@@ -5886,8 +5886,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.reduced-inter-character-spacing">
-        <td>緊排</td>
-        <td>紧排</td>
+        <td lang="zh-Hant">緊排</td>
+        <td lang="zh-Hans">紧排</td>
         <td>jǐnpái</td>
         <td>reduced inter-character spacing</td>
         <td>
@@ -5897,8 +5897,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.base-text">
-        <td>基文</td>
-        <td>基文</td>
+        <td lang="zh-Hant">基文</td>
+        <td lang="zh-Hans">基文</td>
         <td>jīwén</td>
         <td>base text</td>
         <td>
@@ -5908,8 +5908,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.opening-bracket">
-        <td>開始夾注符號</td>
-        <td>开始夹注符号</td>
+        <td lang="zh-Hant">開始夾注符號</td>
+        <td lang="zh-Hans">开始夹注符号</td>
         <td>kāishǐ jiázhù fúhào</td>
         <td>opening bracket(s)</td>
         <td>
@@ -5919,8 +5919,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.latin-letters">
-        <td>拉丁字母</td>
-        <td>拉丁字母</td>
+        <td lang="zh-Hant">拉丁字母</td>
+        <td lang="zh-Hans">拉丁字母</td>
         <td>lādīng zìmǔ</td>
         <td>Latin letters</td>
         <td>
@@ -5930,8 +5930,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.column">
-        <td>欄</td>
-        <td>栏</td>
+        <td lang="zh-Hant">欄</td>
+        <td lang="zh-Hans">栏</td>
         <td>lán</td>
         <td>column</td>
         <td>
@@ -5941,8 +5941,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.column-gap">
-        <td>欄間距</td>
-        <td>栏间距</td>
+        <td lang="zh-Hant">欄間距</td>
+        <td lang="zh-Hans">栏间距</td>
         <td>lán jiānjù</td>
         <td>column gap</td>
         <td>
@@ -5952,8 +5952,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.romanization">
-        <td>羅馬拼音</td>
-        <td>罗马拼音</td>
+        <td lang="zh-Hant">羅馬拼音</td>
+        <td lang="zh-Hans">罗马拼音</td>
         <td>luómǎ pīnyīn</td>
         <td>Romanization</td>
         <td>
@@ -5963,8 +5963,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.solid-setting">
-        <td>密排</td>
-        <td>密排</td>
+        <td lang="zh-Hant">密排</td>
+        <td lang="zh-Hans">密排</td>
         <td>mìpái</td>
         <td>solid setting</td>
         <td>
@@ -5974,8 +5974,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.end-point">
-        <td>末端</td>
-        <td>末端</td>
+        <td lang="zh-Hant">末端</td>
+        <td lang="zh-Hans">末端</td>
         <td>mòduān</td>
         <td>end point</td>
         <td>
@@ -5985,8 +5985,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.page-format">
-        <td>排版樣式</td>
-        <td>排版样式</td>
+        <td lang="zh-Hant">排版樣式</td>
+        <td lang="zh-Hans">排版样式</td>
         <td>páibǎn yàngshì</td>
         <td>page format</td>
         <td>
@@ -5996,8 +5996,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.neutral-tone">
-        <td>輕聲</td>
-        <td>轻声</td>
+        <td lang="zh-Hant">輕聲</td>
+        <td lang="zh-Hans">轻声</td>
         <td>qīngshēng</td>
         <td>neutral tone</td>
         <td>
@@ -6007,8 +6007,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.justified-alignment">
-        <td>兩端對齊</td>
-        <td>两端对齐</td>
+        <td lang="zh-Hant">兩端對齊</td>
+        <td lang="zh-Hans">两端对齐</td>
         <td>liǎngduān duìqí</td>
         <td>justified alignment</td>
         <td>
@@ -6018,8 +6018,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.fullwidth">
-        <td>全形</td>
-        <td>全角</td>
+        <td lang="zh-Hant">全形</td>
+        <td lang="zh-Hans">全角</td>
         <td>quánxíng/<wbr>quánjiǎo</td>
         <td>fullwidth</td>
         <td>
@@ -6032,8 +6032,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.checked-tone">
-        <td>入聲</td>
-        <td>入声</td>
+        <td lang="zh-Hant">入聲</td>
+        <td lang="zh-Hans">入声</td>
         <td>rùshēng</td>
         <td>checked tone</td>
         <td>
@@ -6043,8 +6043,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.tone">
-        <td>聲調</td>
-        <td>声调</td>
+        <td lang="zh-Hant">聲調</td>
+        <td lang="zh-Hans">声调</td>
         <td>shēngdiào</td>
         <td>tone</td>
         <td>
@@ -6054,8 +6054,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.initial">
-        <td>聲母</td>
-        <td>声母</td>
+        <td lang="zh-Hant">聲母</td>
+        <td lang="zh-Hans">声母</td>
         <td>shēngmǔ</td>
         <td>initial</td>
         <td>
@@ -6065,8 +6065,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.start-point">
-        <td>始端</td>
-        <td>始端</td>
+        <td lang="zh-Hant">始端</td>
+        <td lang="zh-Hans">始端</td>
         <td>shǐduān</td>
         <td>starting point</td>
         <td>
@@ -6076,8 +6076,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.loose-setting">
-        <td>疏排</td>
-        <td>疏排</td>
+        <td lang="zh-Hant">疏排</td>
+        <td lang="zh-Hans">疏排</td>
         <td>shūpái</td>
         <td>Loose setting</td>
         <td>
@@ -6087,8 +6087,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.top-margin">
-        <td>天／天頭</td>
-        <td>天/天头</td>
+        <td lang="zh-Hant">天／天頭</td>
+        <td lang="zh-Hans">天/天头</td>
         <td>tiān/tiāntóu</td>
         <td>head/top margin</td>
         <td>
@@ -6098,8 +6098,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.typography">
-        <td>文字設計／字體排印</td>
-        <td>文字设计/字体排印</td>
+        <td lang="zh-Hant">文字設計／字體排印</td>
+        <td lang="zh-Hans">文字设计/字体排印</td>
         <td>wénzìshèjì/<wbr>zìtǐpáiyìn</td>
         <td>typography</td>
         <td>
@@ -6109,8 +6109,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.character-frame">
-        <td>文字外框</td>
-        <td>文字外框</td>
+        <td lang="zh-Hant">文字外框</td>
+        <td lang="zh-Hans">文字外框</td>
         <td>wénzìwàikuāng</td>
         <td>character frame</td>
         <td>
@@ -6120,8 +6120,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.western-script">
-        <td>西文</td>
-        <td>西文</td>
+        <td lang="zh-Hant">西文</td>
+        <td lang="zh-Hans">西文</td>
         <td>Xīwén</td>
         <td>Western text</td>
         <td>
@@ -6131,8 +6131,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.hyphenation">
-        <td>以連字符斷行</td>
-        <td>以连字符断行</td>
+        <td lang="zh-Hant">以連字符斷行</td>
+        <td lang="zh-Hans">以连字符断行</td>
         <td>yǐ liánzìfú duànháng</td>
         <td>hyphenation</td>
         <td>
@@ -6142,8 +6142,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.final">
-        <td>韻母</td>
-        <td>韵母</td>
+        <td lang="zh-Hant">韻母</td>
+        <td lang="zh-Hans">韵母</td>
         <td>yùnmŭ</td>
         <td>final</td>
         <td>
@@ -6153,8 +6153,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.tab">
-        <td>製表定位字元</td>
-        <td>制表定位字元</td>
+        <td lang="zh-Hant">製表定位字元</td>
+        <td lang="zh-Hans">制表定位字元</td>
         <td>zhìbiǎo<wbr>dìngwèi<wbr>zìyuán</td>
         <td>tab</td>
         <td>
@@ -6164,8 +6164,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.vertical-writing-mode">
-        <td>直排／豎排</td>
-        <td>直排/竖排</td>
+        <td lang="zh-Hant">直排／豎排</td>
+        <td lang="zh-Hans">直排/竖排</td>
         <td>zhípái (shùpái)</td>
         <td>vertical writing mode</td>
         <td>
@@ -6175,8 +6175,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.billingual-annotation">
-        <td>中外文對照</td>
-        <td>中外文对照</td>
+        <td lang="zh-Hant">中外文對照</td>
+        <td lang="zh-Hans">中外文对照</td>
         <td>Zhōng-wàiwén duìzhào</td>
         <td>bilingual annotations</td>
         <td>
@@ -6186,8 +6186,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.mixed-text-composition">
-        <td>中、西文混排處理</td>
-        <td>中、西文混排处理</td>
+        <td lang="zh-Hant">中、西文混排處理</td>
+        <td lang="zh-Hans">中、西文混排处理</td>
         <td>Zhōng-Xīwén hùnpái chǔlǐ</td>
         <td>Chinese and Western mixed text composition</td>
         <td>
@@ -6197,8 +6197,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.annotation-text">
-        <td>注文</td>
-        <td>注文</td>
+        <td lang="zh-Hant">注文</td>
+        <td lang="zh-Hans">注文</td>
         <td>zhùwén</td>
         <td>annotation text</td>
         <td>
@@ -6208,19 +6208,19 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.zhuyin">
-        <td>注音符號</td>
-        <td>注音符号</td>
+        <td lang="zh-Hant">注音符號</td>
+        <td lang="zh-Hans">注音符号</td>
         <td>zhùyīn fúhào</td>
         <td>Bopomofo (Zhuyin)</td>
         <td>
           <p its-locale-filter-list="en" lang="en">The general name of Mandarin Phonetic Symbols and Taiwanese Phonetic Symbols.</p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">“国语注音符号”及“台湾方音符号”的统称。</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">"国语注音符号"及"台湾方音符号"的统称。</p>
           <p its-locale-filter-list="zh-hant" lang="zh-hant">「國語注音符號」及「台灣方音符號」的統稱。</p>
         </td>
       </tr>
       <tr id="term.character-advance">
-        <td>字幅</td>
-        <td>字幅</td>
+        <td lang="zh-Hant">字幅</td>
+        <td lang="zh-Hans">字幅</td>
         <td>zìfú</td>
         <td>character advance</td>
         <td>
@@ -6230,8 +6230,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.type-size">
-        <td>字號</td>
-        <td>字号</td>
+        <td lang="zh-Hant">字號</td>
+        <td lang="zh-Hans">字号</td>
         <td>zìhào</td>
         <td>type size</td>
         <td>
@@ -6241,8 +6241,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.tracking">
-        <td>字距</td>
-        <td>字距</td>
+        <td lang="zh-Hant">字距</td>
+        <td lang="zh-Hans">字距</td>
         <td>zìjù</td>
         <td>tracking</td>
         <td>
@@ -6252,8 +6252,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.character-face">
-        <td>字面</td>
-        <td>字面</td>
+        <td lang="zh-Hant">字面</td>
+        <td lang="zh-Hans">字面</td>
         <td>zìmiàn</td>
         <td>character face</td>
         <td>
@@ -6263,8 +6263,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.typeface">
-        <td>字體</td>
-        <td>字体</td>
+        <td lang="zh-Hant">字體</td>
+        <td lang="zh-Hans">字体</td>
         <td>zìtǐ</td>
         <td>typeface</td>
         <td>
@@ -6274,8 +6274,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.font">
-        <td>字型</td>
-        <td>字型</td>
+        <td lang="zh-Hant">字型</td>
+        <td lang="zh-Hans">字型</td>
         <td>zìxíng</td>
         <td>font</td>
         <td>
@@ -6285,8 +6285,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.glyph">
-        <td>字形</td>
-        <td>字形</td>
+        <td lang="zh-Hant">字形</td>
+        <td lang="zh-Hans">字形</td>
         <td>zìxíng</td>
         <td>glyph</td>
         <td>
@@ -6296,8 +6296,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.grid-alignment">
-        <td>縱橫對齊</td>
-        <td>纵横对齐</td>
+        <td lang="zh-Hant">縱橫對齊</td>
+        <td lang="zh-Hans">纵横对齐</td>
         <td>zònghéng duìqí</td>
         <td>grid alignment</td>
         <td>
@@ -6307,8 +6307,8 @@ var respecConfig = {
         </td>
       </tr>
       <tr id="term.horizontal-in-vertical">
-        <td>縱中橫排</td>
-        <td>纵中横排</td>
+        <td lang="zh-Hant">縱中橫排</td>
+        <td lang="zh-Hans">纵中横排</td>
         <td>zòng<wbr>zhōng<wbr>héng<wbr>pái</td>
         <td>horizontal-in-vertical setting</td>
         <td>

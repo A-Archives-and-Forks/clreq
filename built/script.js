@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   // src/script.ts
-  void function() {
+  void (function() {
     const LANG_LIST = ["en", "zh-hant", "zh-hans"];
     const L10N = {
       "en": {
@@ -170,5 +170,5 @@
     }
     addLangAttr();
     addSelfLinks();
-  }();
+  })();
 })();

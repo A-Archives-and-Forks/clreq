@@ -5,7 +5,6 @@
 <title>Chinese Layout Task Force Home Page</title>
 <link type="text/css" rel="stylesheet" href="https://w3c.github.io/i18n-activity/style/homepage.css">
 
-
 <script>
 var f = { }
 
@@ -14,15 +13,15 @@ f.directory = 'clreq/homepage/'+'/';
 f.filename = 'index';
 f.authors = 'Richard Ishida, W3C';
 f.previousauthors = '';
-f.modifiers = '';
+f.modifiers = 'Fuqiao Xue, W3C';
 f.searchString = 'clreq-homepage';
 f.firstPubDate = '2016-03-16';
-f.lastSubstUpdate = { date:'2018-01-25', time:'07:18'}
+f.lastSubstUpdate = { date:'2025-09-17', time:'12:00'}
 f.status = 'notreviewed';
 f.path = 'https://w3c.github.io/i18n-drafts/'
 
 // AUTHORS AND TRANSLATORS should fill in these assignments:
-f.thisVersion = { date:'2018-01-25', time:'07:18'}
+f.thisVersion = { date:'2025-09-17', time:'12:00'}
 f.contributors = '';
 
 // TRANSLATORS should fill in these assignments:
@@ -44,8 +43,10 @@ f.additionalLinks = ''
 <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 <style>
-div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float: none; padding: 0; }
-.panel {flex: 1; }
+div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float: none; padding: 0; gap: 1.5rem; }
+.panel { flex: 1 1 18rem; margin: 0; }
+.panel h2 { margin-top: 0; }
+.panel h3 { margin-top: 1.5rem; }
 .topRight { width: inherit; }
 </style>
 </head>
@@ -56,98 +57,106 @@ div.content { width: 100%; display: flex; flex-flow: row; flex-wrap: wrap; float
   <script>document.getElementById('mainNavigation').innerHTML = mainNavigation</script>
 
 
-<h1>Chinese Layout Task Force<br>
-  Home Page</h1>
+<h1>Chinese Layout Task Force</h1>
 </header>
 
-
-<p> <span class="intnavbar"><strong>Key information:</strong> <a href="#about">Mission</a> - <a href="../charter/">Charter</a> - <a href="https://www.w3.org/blog/International/category/clreq/">News</a> - <a href="#docs">Work aims</a> - <a href="https://github.com/w3c/clreq/">GitHub repo</a> - <a href="#communication">Communication</a> <a href="https://lists.w3.org/Archives/Public/public-i18n-its-ig/"></a>- <a href="#join">How to join</a></span> - <a href="index.zh-hans.html">简体中文</a> </p>
-
+<p><span class="intnavbar"><strong>Key information:</strong> <a href="#overview">Overview</a> &ndash; <a href="#help">Help wanted</a> &ndash; <a href="#key-links">Key links</a> &ndash; <a href="#documents">Documents</a> &ndash; <a href="#participate">Participate</a> &ndash; <a href="#contact">Contact</a> &ndash; <a href="#resources">More resources</a></span> &ndash; <a href="index.zh-hans.html">简体中文</a></p>
 
 <div class="content">
+  <section class="panel">
+    <h2 id="overview">Overview</h2>
+    <p>This task force explores gaps in support for the Simplified and Traditional Chinese scripts on the Web and in eBooks, and documents requirements for those writing systems.</p>
+    <p>We aim to connect local experts who understand the needs of Chinese users with people across the W3C community who build Web standards. Topics for discussion are guided by the <a href="https://www.w3.org/International/i18n-activity/templates/gap-analysis/gap-analysis_template.html">gap-analysis template</a>, and the results feed into the <a href="https://www.w3.org/International/typography/gap-analysis/language-matrix.html">language matrix</a>.</p>
 
-<section class="panel">
-<h2 id="about" style="margin-top: 0"><a href="#about">Mission</a></h2>
-        <p>This task force will document requirements for the layout and presentation of text in Simplified and Traditional Chinese script when they are used by Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode.</p>
-        <p>The task force will report the results of its activities back to the Internationalization Core Working Group, as well as to other relevant groups and to the W3C membership and community at large. </p>
-        <p>Many of the topics addressed are listed in the <a href="https://w3c.github.io/typography/" target="_blank">Language enablement index</a>.</p>
-        <h2 id="join"> <a href="#join">How to Join</a> </h2>
-        <p>We welcome participation requests from people who are interested in contributing to the work of the Task Force. There are two ways to get involved:</p>
-        <ol>
-          <li>Task Force <em>members</em> are expert contributors who participate actively in producing the work of the group, regularly contributing text and advice to create the outputs, and participating in meetings. For more information about becoming a task force member contact <a href="mailto:ishida@w3.org">Richard Ishida</a>.</li>
-          <li>It is also possible to follow and contribute to discussions without the commitment required in being an expert contributor. See the <a href="https://github.com/w3c/clreq">github home page</a> for details.</li>
-        </ol>
-        <h2 id="admin"><a href="#admin">Organisation of the task force</a> </h2>
-<p>The Chinese Layout Task Force is part of the <a href="https://w3c.github.io/i18n-activity/i18n-ig/">W3C Internationalization Interest Group</a> (i18n IG). The <a href="https://w3c.github.io/i18n-activity/i18n-ig/">Internationalization Working Group</a> (i18n WG) oversees the work of the task force, and publishes the task force's document to the TR space. </p>
-<p>The Task Force works closely with the Chinese National Committee
-          for Standardization (Standardization Administration of China, SAC)
-          , the National Information Technology Standardization Technical
-          Committee TC28 / SC2 (IT / character set and encoding), TC28 /
-          SC30 (IT / Chinese platform especially technology). It also works
-          with the National Information T echnology Standardization Technical
-          Committee Tibetan, text IT National Standards Working
-Group维哈柯minority culture, Mongolian and others.</p>
-The co-chairs of the task force are Chen Zhuang (China
-          Electronics Standardization Institute Information), Dong Fuxing
-          (Invited Expert), and Wuritu (Inner Mongolia University)<a href="mailto:slata@mit.gov.in"></a>.
-          The chair of the Interest Group is <a href="mailto:duerst@it.aoyama.ac.jp">Martin
-            Dürst</a>.
-<h2 id="activity"> <a href="#activity">Internationalization Activity</a></h2>
-        <p>The main page for access to the i18n Activity of the W3C is <a href="https://www.w3.org/International/">https://www.w3.org/International/</a>. This is where we post news, and links to the various types of information available on the site.  You may want to check out the quick links on the right and the "Get help!" by task index.</p>
-        <p>For information about layout and typographic requirements work for other scripts, see the page <a href="https://www.w3.org/International/layout">Layout &amp; typography</a>.</p>
-        </section>
+    <h3 id="help">Help wanted</h3>
+    <p><strong>We are actively seeking information about the Chinese writing system.</strong> Visit our <a href="https://github.com/w3c/clreq/issues?q=is:issue+is:open+label:%E5%95%8F%E9%A1%8C/question">open questions</a> to see where your expertise is needed.</p>
 
+    <h3 id="feedback">Feedback</h3>
+    <p>Please use the <a href="https://github.com/w3c/clreq/issues">GitHub issue list</a> to raise language support issues, join discussions, or send feedback about our documents. You can learn more about <a href="https://www.w3.org/International/i18n-activity/guidelines/issues.html">how GitHub issues work</a>. The <a href="https://lists.w3.org/Archives/Public/public-i18n-chinese/">public-i18n-chinese</a> mailing list sends notification digests and meeting minutes; it is not used for technical discussions.</p>
 
-<section class="panel directory">
-<h2 id="docs" style="margin-top: 0"> <a href="#docs">Work aims</a> </h2>
-        <p>The Chinese Layout Task Force will not produce
-          Recommendation-track deliverables but expects to produce Working
-          Group Notes, published by the <a href="https://w3c.github.io/i18n-activity/i18n-wg/">Internationalization
-          Working Group</a>. </p>
-        <p>To find and follow progress on deliverables, see the <a href="https://github.com/w3c/clreq">github repo</a>.</p>
-        <p>The main deliverables include the following:</p>
-<ul>
-<li><strong>Chinese script gap analysis</strong></li>
-<li><strong>Requirements for Chinese Text Layout 中文排版需求</strong><br>
-<a href="https://www.w3.org/International/clreq/">Editor's draft</a> • <a href="https://github.com/w3c/clreq/">GitHub</a></li>
-</ul>
-<p>Documents will be produced in Chinese and English, and regular information about the status of the work and key discussion points will be forwarded to the English-language lists for wide review.</p>
-        <p>The group <a href="../charter/">charter</a> also allows review of draft specifications
-          produced by other working groups, and provision of translations of
-          relevant W3C specifications and resources. The group may also choose to produce other non-normative deliverables,
-          such as test cases and error reports, under the terms of the <a href="http://www.w3.org/2004/10/27-testcases">Policies
-          for Contribution of Test Cases to W3C</a>, and in coordination
-          with any relevant working groups.</p>
-<h2 id="communication"><a href="#communication">Communication</a></h2>
-        <p>Most of the technical discussion will take place in the <a href="https://github.com/w3c/clreq/issues">GitHub issues list</a>. If you want to raise an issue with the documents, this is the place to raise it.</p>
-        <p>To follow the work, you can 'Watch' the repository, or subscribe to the <a href="https://lists.w3.org/Archives/Public/public-i18n-chinese/">public-i18n-chinese</a> mailing list, which is notified once a day about changes to the repo. The <a href="https://lists.w3.org/Archives/Public/www-international/">www-international</a> list is also notified daily. (Please use github issues rather than the mailing list to send feedback.) Meeting minutes are sent to public-i18n-chinese.</p>
-<p>If there is a need
-          to communicate in Chinese by email, the <a href="https://lists.w3.org/Archives/Public/public-zhreq/">public-zhreq</a> can be used for this purpose. </p>
-        <p>The group will use  the <a href="https://www.w3.org/International/"> W3C Internationalization home page </a>and <a href="http://www.chinaw3c.org/"> W3C China Website </a> to disseminate public information about
-          its activities. </p>
-        <p>There is also a <a href="https://lists.w3.org/Archives/Public/public-clreq-admin/" translate="no">public-clreq-admin</a> mailing list for internal and administrative use by the TF
-          participants, for example for announcing teleconference agendas, new
-          participants, preparing for publication, etc. or for discussing other
-          non-technical, practical arrangements related to the group. Only
-          participants in the task force are subscribed to that list.</p>
-        <p>The task force aims to hold teleconference or face-to-face
-          meetings at least once a month, with additional
-          meetings as needed to enable discussion and review status of the
-          work.</p>
-  <p>The <code class="kw" translate="no">#clreq</code> IRC channel is used for supplementary communication and minute-taking during meetings. Instructions for use are sent out with the meeting agenda.</p>
+    <h3 id="participate">Participate</h3>
+    <p>You can get involved at different levels:</p>
+    <ul>
+      <li><strong>Stay informed:</strong> Subscribe to <a href="mailto:public-i18n-chinese-request@w3.org?subject=subscribe">public-i18n-chinese</a> for daily digests about related issues. To follow Chinese, Japanese, and Korean work together, subscribe to <a href="mailto:public-i18n-cjk-request@w3.org?subject=subscribe">public-i18n-cjk</a>.</li>
+      <li><strong>Contribute content:</strong> Read and agree with our <a href="https://github.com/w3c/clreq/blob/gh-pages/CONTRIBUTING.md">contribution guidelines</a>, then participate in issue discussions or submit pull requests.</li>
+      <li><strong>Take on a larger role:</strong> To become a participant, editor, or chair, contact <a href="mailto:ishida@w3.org">Richard Ishida</a> or <a href="mailto:xfq@w3.org">Fuqiao Xue</a>. See <a href="https://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html">Get involved with Language Enablement</a> for details.</li>
+    </ul>
   </section>
 
+  <section class="panel">
+    <h2 id="key-links">Key links</h2>
+    <ul>
+      <li><a href="https://github.com/w3c/clreq">GitHub repo</a></li>
+      <li><a href="https://github.com/w3c/clreq/issues">Discussion threads</a></li>
+      <li><a href="https://www.w3.org/International/clreq/charter/">Charter</a></li>
+    </ul>
+
+    <h3 id="documents">Resources and requirement documents</h3>
+    <ul>
+      <li><strong>Chinese Script Resources</strong> &mdash; <a href="https://www.w3.org/TR/hani-lreq">DNOTE</a> | <a href="https://www.w3.org/International/clreq/resources/">Editor's draft</a> | <a href="https://github.com/w3c/clreq/commits/gh-pages/resources">Latest commits</a></li>
+      <li><strong>Chinese Layout Requirements</strong> &mdash; <a href="https://www.w3.org/TR/clreq">DNOTE</a> | <a href="https://www.w3.org/International/clreq/">Editor's draft</a> | <a href="https://github.com/w3c/clreq/commits/gh-pages/index.html">Latest commits</a></li>
+    </ul>
+
+    <h3 id="gap">Gap analysis documents</h3>
+    <ul>
+      <li><strong>Chinese Gap Analysis</strong> &mdash; <a href="https://www.w3.org/TR/clreq-gap">DNOTE</a> | <a href="https://www.w3.org/International/clreq/gap-analysis/">Editor's draft</a> | <a href="https://github.com/w3c/clreq/commits/gh-pages/gap-analysis/index.html">Latest commits</a></li>
+    </ul>
+
+    <h3 id="discuss">Discussion routes</h3>
+    <ul>
+      <li><a href="https://github.com/w3c/clreq/issues?q=is%3Aissue+is%3Aopen+label%3A問題/question">Questions</a></li>
+      <li><a href="https://github.com/w3c/clreq/labels/doc%3Aclreq">Gap reports</a></li>
+      <li><a href="https://github.com/w3c/clreq/issues?q=is%3Aopen+-label%3A%E5%95%8F%E9%A1%8C%2Fquestion+-label%3Agap">Other discussions</a></li>
+      <li><a href="https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Aclreq+label%3Aspec-type-issue">Spec issues</a></li>
+    </ul>
+
+    <h3 id="related">Related documents</h3>
+    <ul>
+      <li><a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a></li>
+    </ul>
+  </section>
+
+  <section class="panel">
+    <h2 id="contact">Contact</h2>
+    <ul>
+      <li>Chairs: Yijun Chen, Eric Q. Liu</li>
+      <li>W3C staff: <a href="mailto:xfq@w3.org">Fuqiao Xue</a>, <a href="mailto:ishida@w3.org">Richard Ishida</a></li>
+      <li><a href="https://www.w3.org/groups/tf/i18n-clreq/participants/">Group participants</a></li>
+    </ul>
+
+    <h3 id="resources">Practical information</h3>
+    <ul>
+      <li><a href="https://lists.w3.org/Archives/Public/public-i18n-chinese/">public-i18n-chinese mail archive</a></li>
+      <li><a href="https://lists.w3.org/Archives/Public/public-i18n-cjk/">public-i18n-cjk mail archive</a></li>
+      <li><a href="https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests">Writing i18n tests</a></li>
+      <li><a href="https://www.w3.org/International/i18n-activity/guidelines/process.html">Practical tips for task forces</a></li>
+      <li><a href="https://www.w3.org/groups/tf/i18n-clreq/calendar/">Meeting info</a></li>
+      <li>Action tracker (tbd)</li>
+    </ul>
+
+    <h3 id="background">Background reading</h3>
+    <ul>
+      <li><a href="https://www.w3.org/International/typography/gap-analysis/language-matrix.html">Language support heatmap</a></li>
+      <li><a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Analysing support for text layout on the Web</a></li>
+      <li><a href="https://www.w3.org/International/i18n-drafts/nav/languagedev">Overview of language enablement work in progress</a></li>
+      <li><a href="https://www.w3.org/International/i18n-drafts/pages/languagedev_participation">Get involved with Language Enablement</a></li>
+      <li><a href="https://github.com/w3c/typography/wiki/Setting-up-a-Gap-Analysis-Project">Setting up a Gap Analysis Project</a></li>
+      <li><a href="https://www.w3.org/International/sponsorship/">Internationalization Sponsorship Program</a></li>
+    </ul>
+
+    <h3 id="editors">For editors</h3>
+    <p>Because our documents are multilingual, please follow the steps in <a href="https://w3c.github.io/clreq/EDITING">EDITING.md</a> when you modify source text. Additional guidance:</p>
+    <ul>
+      <li><a href="https://www.w3.org/International/i18n-activity/guidelines/github">GitHub guidelines for i18n documents</a></li>
+      <li><a href="https://www.w3.org/International/i18n-activity/guidelines/editing">Editorial guidelines for i18n documents</a></li>
+      <li><a href="https://github.com/w3c/clreq/wiki/%E5%B7%A5%E4%BD%9C%E7%B5%84%E7%B7%A8%E8%BC%AF%E9%AB%94%E4%BE%8B%E4%B9%8B%E7%B0%A1%E7%B9%81%E9%AB%94%E8%A9%9E%E5%BD%99%E8%A1%A8">Hans-Hant glossary</a></li>
+    </ul>
+  </section>
 </div>
 
-
 <hr>
-<p style="line-height:1;"><small><em>Chair: Chen Zhuang, Dong Fuxing,
-          Nashunwuritu<br>
-Staff contact:  Li Anqi, Richard Ishida</em><br>
-  <em>$Id: Overview.html,v 1.77 2010/03/02 12:12:01 rishida Exp $</em></small></p>
-<p class="copyright" style="line-height:1;"><small><a rel="Copyright" href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2015-2018 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="http://www.csail.mit.edu/index.php"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-documents">document
-  use</a> and <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-software">software
-  licensing</a> rules apply. Your interactions with this site are in
-  accordance with our <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a> and <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small></p>
+<p style="line-height:1;"><small><em>Chairs:</em> Yijun Chen, Eric Q. Liu<br>
+<em>W3C staff contacts:</em> Fuqiao Xue, Richard Ishida</small></p>
+<p class="copyright" style="line-height:1;"><small><a rel="Copyright" href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> &copy; 2015-2025 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>, All Rights Reserved. W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>, <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> and <a rel="Copyright" href="https://www.w3.org/Consortium/Legal/copyright-software">software licensing</a> rules apply. Your interactions with this site are in accordance with our <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Public">public</a> and <a href="https://www.w3.org/Consortium/Legal/privacy-statement#Members">Member</a> privacy statements.</small></p>
 </body>
 </html>

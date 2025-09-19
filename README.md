@@ -1,6 +1,6 @@
 # Chinese Language Enablement (clreq)
 
-**Languages: [English (current)](README.md)** | **[简体中文](README.zh-Hans.md)** | **[繁體中文](README.zh-Hant.md)**
+**Languages: [English (current)](https://w3c.github.io/clreq/home)** | **[简体中文](https://w3c.github.io/clreq/README.zh-Hans.html)** | **[繁體中文](https://w3c.github.io/clreq/README.zh-Hant.html)**
 
 This is the place to explore gaps in support for the Chinese Simplified and Traditional scripts on the Web and in eBooks, and to document requirements.
 

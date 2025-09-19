@@ -1,6 +1,6 @@
 # 中文支持 (clreq)
 
-**语言版本: [English](README.md)** | **[简体中文 (当前文档)](README.zh-Hans.md)** | **[繁體中文](README.zh-Hant.md)**
+**语言版本: [English](https://w3c.github.io/clreq/home)** | **[简体中文 (当前文档)](https://w3c.github.io/clreq/README.zh-Hans.html)** | **[繁體中文](https://w3c.github.io/clreq/README.zh-Hant.html)**
 
 本小组旨在探讨Web和电子书在简体和繁体中文支持方面的不足，并且记录相关需求。
 

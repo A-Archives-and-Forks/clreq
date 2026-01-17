@@ -2,9 +2,28 @@
 
 void function() {
 
-const LANG_LIST = ['en', 'zh-hant', 'zh-hans']
+type Language = 'en' | 'zh-hant' | 'zh-hans' | 'all'
 
-const L10N = {
+interface LocaleData {
+  selector: Record<string, string>
+  fig: string
+  collapseSidebar: string
+  expandSidebar: string
+  jumpToToc: string
+  summary?: string
+  dt: Record<string, string>
+  dd: Record<string, string>
+}
+
+interface L10N {
+  en: LocaleData
+  'zh-hant': LocaleData
+  'zh-hans': LocaleData
+}
+
+const LANG_LIST: Language[] = ['en', 'zh-hant', 'zh-hans']
+
+const L10N: L10N = {
 	'en': {
     // CSS selectors for elements that need text replacement
     selector: {
@@ -18,7 +37,7 @@ const L10N = {
     },
 
     // Prefix for figure captions (e.g., "Fig. 1", "Fig. 2")
-    'fig': 'Fig. ',
+    fig: 'Fig. ',
 
     collapseSidebar: 'Collapse Sidebar',
     expandSidebar: 'Pop Out Sidebar',
@@ -42,13 +61,13 @@ const L10N = {
       '.note-title': '注',
     },
 
-    'fig': '圖',
+    fig: '圖',
 
     collapseSidebar: '收起側邊欄',
     expandSidebar: '彈出側邊欄',
     jumpToToc: '跳轉至內容大綱',
 
-    'summary': '關於此文檔',
+    summary: '關於此文檔',
 
     dt: {
       'This version:': '本版本：',
@@ -79,13 +98,13 @@ const L10N = {
       '.note-title': '注',
     },
 
-    'fig': '图',
+    fig: '图',
 
     collapseSidebar: '收起侧边栏',
     expandSidebar: '弹出侧边栏',
     jumpToToc: '跳转至内容大纲',
 
-    'summary': '关于此文档',
+    summary: '关于此文档',
 
     dt: {
       'This version:': '本版本：',
@@ -109,8 +128,8 @@ const L10N = {
 const $root = document.documentElement
 let $$hidden: object[] = []
 
-function arrayify(obj: any) {
-	return Array.from ? Array.from(obj) : Array.prototype.slice.call(obj)
+function arrayify(obj: any): any[] {
+	return Array.from(obj)
 }
 
 /**
@@ -118,11 +137,11 @@ function arrayify(obj: any) {
  * @param selector - CSS selector string
  * @returns Array of matching DOM elements
  */
-function $$(selector: string) {
+function $$(selector: string): HTMLElement[] {
 	return arrayify(document.querySelectorAll(selector))
 }
 
-function toggle$rootClass(lang: string) {
+function toggle$rootClass(lang: string): void {
   $root.lang = lang === 'all' ? 'en' : lang
 
 	if (lang === 'all') {
@@ -134,7 +153,7 @@ function toggle$rootClass(lang: string) {
 	}
 }
 
-function showAndHideLang(lang: string) {
+function showAndHideLang(lang: string): void {
   // Show previously hidden parts:
   $$hidden
   .forEach(function($elmt) { Object.assign($elmt, { hidden: false }) })
@@ -147,12 +166,12 @@ function showAndHideLang(lang: string) {
   $$hidden = (
     LANG_LIST
     .filter(function(it) { return it !== lang })
-    .reduce(function(result, it) { return result.concat($$('[its-locale-filter-list="' + it + '"]')) }, [])
+    .reduce(function(result, it) { return result.concat($$(`[its-locale-filter-list="${it}"]`)) }, [])
     .map(function($elmt) { return Object.assign($elmt, { hidden: true }) })
   )
 }
 
-function replaceBoilerplateText(lang: string) {
+function replaceBoilerplateText(lang: string): void {
   const l10n = L10N[lang === 'all' ? 'en' : lang]
 
   // Alter some basic headings, etc:
@@ -167,14 +186,14 @@ function replaceBoilerplateText(lang: string) {
   // Update figure captions and figure references with localized prefix
   $$('figcaption, .fig-ref')
   .forEach(function($elmt) {
-  	Object.assign($elmt.firstChild, { textContent: l10n['fig'] })
+  	Object.assign($elmt.firstChild, { textContent: l10n.fig })
 	})
 
   // Update summary text in document details section
   $$('body > div.head > details > summary')
   .forEach(function($summary) {
   	let originalText = $summary.dataset.originalText || $summary.textContent.trim()
-    let text = l10n['summary'] || originalText
+    let text = l10n.summary || originalText
 
     if (text) {
       $summary.textContent = text
@@ -195,7 +214,7 @@ function replaceBoilerplateText(lang: string) {
 
     // Special handling for bug tracker links (dd elements contain HTML)
     if (originalText === 'Bug tracker:') {
-      $dt.nextElementSibling.innerHTML = l10n.dd['Bug tracker:']
+      $dt.nextElementSibling!.innerHTML = l10n.dd['Bug tracker:']
     }
   })
 
@@ -206,10 +225,10 @@ function replaceBoilerplateText(lang: string) {
 
 let sidebarObserver: MutationObserver | null = null
 
-function translateFixupStrings(lang: string) {
+function translateFixupStrings(lang: string): void {
   const l10n = L10N[lang === 'all' ? 'en' : lang]
-  
-  const fixupIds: { [key: string]: string } = {
+
+  const fixupIds: Record<string, keyof LocaleData> = {
     'toc-collapse-text': 'collapseSidebar',
     'toc-expand-text': 'expandSidebar',
     'toc-jump-text': 'jumpToToc',
@@ -233,7 +252,7 @@ function translateFixupStrings(lang: string) {
     const toggle = document.getElementById('toc-toggle')
     if (toggle) {
       sidebarObserver = new MutationObserver(function() {
-        const currentLang = $root.lang || 'en'
+        const currentLang = ($root.lang || 'en') as Language
         if (currentLang !== 'en') {
           translateFixupStrings(currentLang)
         }
@@ -247,7 +266,7 @@ function translateFixupStrings(lang: string) {
  * Expose to global for now since respec will re-parse the entire document
  * and event bound will be lost.
  */
-window.switchLang = function(lang: string) {
+window.switchLang = function(lang: string): void {
   toggle$rootClass(lang)
   showAndHideLang(lang)
   replaceBoilerplateText(lang)
@@ -256,19 +275,19 @@ window.switchLang = function(lang: string) {
 /**
  * Add self-link anchors for all p and li elements with id attributes
  */
-function addSelfLinks() {
+function addSelfLinks(): void {
   // Find all p and li elements that have an id attribute
   $$('li[id]')
   .forEach(function($elmt) {
     // Get the id of the element
     const elementId = $elmt.getAttribute('id')
-    
+
     if (elementId) {
       // Create the self-link anchor element
       const selfLink = document.createElement('a')
       selfLink.className = 'self-link'
-      selfLink.href = '#' + elementId
-      
+      selfLink.href = `#${elementId}`
+
       // Insert the self-link anchor as the first child of the element
       $elmt.insertBefore(selfLink, $elmt.firstChild)
     }
@@ -283,12 +302,12 @@ function addSelfLinks() {
  * Note that this may still produce temporarily incorrect labelling
  * where text is awaiting translation.
  */
-function addLangAttr() {
+function addLangAttr(): void {
   toggle$rootClass('all')
 
   LANG_LIST
   .forEach(function(lang) {
-    $$('[its-locale-filter-list="' + lang + '"]')
+    $$(`[its-locale-filter-list="${lang}"]`)
     .forEach(function($elmt) {
       if (!$elmt.lang) {
         $elmt.lang = lang

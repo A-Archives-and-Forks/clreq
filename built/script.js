@@ -16,7 +16,7 @@
           ".note-title": "Note"
         },
         // Prefix for figure captions (e.g., "Fig. 1", "Fig. 2")
-        "fig": "Fig. ",
+        fig: "Fig. ",
         collapseSidebar: "Collapse Sidebar",
         expandSidebar: "Pop Out Sidebar",
         jumpToToc: "Jump to Table of Contents",
@@ -35,11 +35,11 @@
           "#table-of-contents": "\u5167\u5BB9\u5927\u7DB1",
           ".note-title": "\u6CE8"
         },
-        "fig": "\u5716",
+        fig: "\u5716",
         collapseSidebar: "\u6536\u8D77\u5074\u908A\u6B04",
         expandSidebar: "\u5F48\u51FA\u5074\u908A\u6B04",
         jumpToToc: "\u8DF3\u8F49\u81F3\u5167\u5BB9\u5927\u7DB1",
-        "summary": "\u95DC\u65BC\u6B64\u6587\u6A94",
+        summary: "\u95DC\u65BC\u6B64\u6587\u6A94",
         dt: {
           "This version:": "\u672C\u7248\u672C\uFF1A",
           "History:": "\u6B77\u53F2\uFF1A",
@@ -66,11 +66,11 @@
           "#table-of-contents": "\u5185\u5BB9\u5927\u7EB2",
           ".note-title": "\u6CE8"
         },
-        "fig": "\u56FE",
+        fig: "\u56FE",
         collapseSidebar: "\u6536\u8D77\u4FA7\u8FB9\u680F",
         expandSidebar: "\u5F39\u51FA\u4FA7\u8FB9\u680F",
         jumpToToc: "\u8DF3\u8F6C\u81F3\u5185\u5BB9\u5927\u7EB2",
-        "summary": "\u5173\u4E8E\u6B64\u6587\u6863",
+        summary: "\u5173\u4E8E\u6B64\u6587\u6863",
         dt: {
           "This version:": "\u672C\u7248\u672C\uFF1A",
           "History:": "\u5386\u53F2\uFF1A",
@@ -91,7 +91,7 @@
     const $root = document.documentElement;
     let $$hidden = [];
     function arrayify(obj) {
-      return Array.from ? Array.from(obj) : Array.prototype.slice.call(obj);
+      return Array.from(obj);
     }
     function $$(selector) {
       return arrayify(document.querySelectorAll(selector));
@@ -116,7 +116,7 @@
       $$hidden = LANG_LIST.filter(function(it) {
         return it !== lang;
       }).reduce(function(result, it) {
-        return result.concat($$('[its-locale-filter-list="' + it + '"]'));
+        return result.concat($$(`[its-locale-filter-list="${it}"]`));
       }, []).map(function($elmt) {
         return Object.assign($elmt, { hidden: true });
       });
@@ -129,11 +129,11 @@
         });
       });
       $$("figcaption, .fig-ref").forEach(function($elmt) {
-        Object.assign($elmt.firstChild, { textContent: l10n["fig"] });
+        Object.assign($elmt.firstChild, { textContent: l10n.fig });
       });
       $$("body > div.head > details > summary").forEach(function($summary) {
         let originalText = $summary.dataset.originalText || $summary.textContent.trim();
-        let text = l10n["summary"] || originalText;
+        let text = l10n.summary || originalText;
         if (text) {
           $summary.textContent = text;
           $summary.dataset.originalText = originalText;
@@ -195,7 +195,7 @@
         if (elementId) {
           const selfLink = document.createElement("a");
           selfLink.className = "self-link";
-          selfLink.href = "#" + elementId;
+          selfLink.href = `#${elementId}`;
           $elmt.insertBefore(selfLink, $elmt.firstChild);
         }
       });
@@ -203,7 +203,7 @@
     function addLangAttr() {
       toggle$rootClass("all");
       LANG_LIST.forEach(function(lang) {
-        $$('[its-locale-filter-list="' + lang + '"]').forEach(function($elmt) {
+        $$(`[its-locale-filter-list="${lang}"]`).forEach(function($elmt) {
           if (!$elmt.lang) {
             $elmt.lang = lang;
           }

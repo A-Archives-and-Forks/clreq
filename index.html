@@ -2841,8 +2841,8 @@ var respecConfig = {
 
     <ol type="a">
       <li>
-        <p its-locale-filter-list="en" lang="en" class="checkme">
-          Punctuation marks at the end of a line. Adjust them to a fixed width of half a Han character.
+        <p its-locale-filter-list="en" lang="en">
+          Punctuation marks at the end of a line: adjust them to a fixed width of half a Han character.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行末的标点。调成固定的半个汉字宽。
@@ -2865,7 +2865,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Spacing between Western text: for lines with several Western words, their spacing should be processed at the same time, with equal treatment. The minimum space between two Western words should be 1/4&nbsp;em.
+          The spacing between Western words within a line: for lines with several Western words, their spacing should be processed in the same way. The minimum spacing between two Western words should be 1/4&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的西文词距。一行内若有多处西文词距，应该同时、同等量处理，每个西文词距最小可以挤压到四分之一汉字宽。
@@ -2876,7 +2876,7 @@ var respecConfig = {
       </li>
 
       <li>
-        <p its-locale-filter-list="en" lang="en" class="checkme">
+        <p its-locale-filter-list="en" lang="en">
           Interpuncts: reduce space eually on both sides of the character. The minimum space is 0, which results of an interpunct with 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
@@ -2901,7 +2901,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Commas, secondary commas and semi-colons: space reduction should follow [[[#h-punctuation_adjustment_space]]]. Spacing can be reduced at the end of the punctuation mark, or equally on both sides. If multiple punctuation marks of this kind occur within the same line, their space should be reduced in the same way. Space can be reduced until the punctuation mark is 1/2&nbsp;em.
+          Commas, secondary commas, and semi-colons: space reduction should follow [[[#h-punctuation_adjustment_space]]]. Spacing can be reduced at the end of the punctuation mark, or equally on both sides. If multiple punctuation marks of this kind occur within the same line, their space should be reduced in the same way. Space can be reduced to a minimum width of half a Han character.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的逗号、顿号、分号。挤压空间依照[[[#h-punctuation_adjustment_space]]]，可以是后侧，也可以是字面两侧同时，最小可以挤压到半个汉字字宽。一行内如有多处，应该同时、同等量处理。
@@ -2913,7 +2913,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Spacing between Han characters and Western texts: if there are numerous instances of mixed texts, space reduction should be processed at the same time, with equal treatment, with the minimum space being 1/8&nbsp;em.
+          The spacing between Chinese and Western text within a line should be at least one-eighth of the width of a Chinese character. If there are multiple such instances within a single line, they should be treated in the same way.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           行内的中西间距，最小挤为八分之一汉字宽。一行内若有多处，应该同时、同等量处理。
@@ -2923,7 +2923,7 @@ var respecConfig = {
         </p>
         <aside class="note">
           <p its-locale-filter-list="en" lang="en" class="checkme">
-            Certain typesetting styles require a fixed spacing between Han characters and Western texts, for example 1/4&nbsp;em, in such cases, adjustment is not allowed.
+            Certain typesetting styles require a fixed spacing between Han and Western text, for example 1/4&nbsp;em. In such cases, adjustment is not allowed.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
             在一些排版风格中，中西间距固定默认宽度（如四分之一汉字宽），被排除在行内调整对象之外，不允许被挤压。
@@ -2935,7 +2935,7 @@ var respecConfig = {
       </li>
 
       <li>
-        <p its-locale-filter-list="en" lang="en" class="checkme">
+        <p its-locale-filter-list="en" lang="en">
           Periods, question marks and exclamation marks: in accordance with [[[#h-punctuation_adjustment_space]]], if space is available, reduce the spacing down to the minimum size of 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
@@ -2946,7 +2946,7 @@ var respecConfig = {
         </p>
         <aside class="note">
           <p its-locale-filter-list="en" lang="en" class="checkme">
-            As these punctuation marks indicate a longer pause at the end of a sentence, certain typesetting styles do not allow line adjustment to be made on them, maintaining their width to be 1&nbsp;em.
+            Because punctuation marks at the end of a sentence indicate a significant pause, some typesetting styles prohibit this adjustment and keep periods, question marks, and exclamation points at a fixed width of one Han character.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
             由于句末标点表示停顿较大，因此有些排版风格禁止此项调整，而保持句号、问号、感叹号固定一个字宽。
@@ -2979,7 +2979,7 @@ var respecConfig = {
     <ol type="a">
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Word spacing between Western text: for lines with several Western word spaces, these should be processed at the same time, with equal treatment. Each word space can be expanded to a maximum of 1/2&nbsp;em.
+          Spacing between Western words: if there are multiple instances of Western word spacing within a single line, they should be treated in the same way. Each space between Western words can be expanded to a maximum of half the width of a Han character.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           西文词距。一行内若有多处西文词距，应该同时、同等量处理，每个西文词距最大可以拉伸到半个汉字字宽。
@@ -2991,7 +2991,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Space between Han characters and Western texts can be expanded from the default width (e.g., 1/4&nbsp;em). They should be processed at the same time, with equal treatment.
+          The spacing between Chinese and Western text within a line should be expanded starting from the default width (e.g., 1/4&nbsp;em). If there are multiple instances within a single line, they should be adjusted in the same way, up to a maximum of half the width of a Han character.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           行内的中西间距，从默认宽度（如四分之一汉字宽）开始拉伸，一行内若有多处，应该同时、同等量处理，最大可拉大到半个汉字字宽。
@@ -3001,7 +3001,7 @@ var respecConfig = {
         </p>
         <aside class="note">
           <p its-locale-filter-list="en" lang="en" class="checkme">
-            Numerous typesetting styles practically only allow expansion of space up to 1/3&nbsp;em. Similar to space reduction, there are certain typesetting styles where the spacing between Han characters and Western texts are fixed at a default width, for example 1/4&nbsp;em, in such cases, adjustments are not allowed.
+            In practice, numerous typesetting styles only allow expansion of space up to 1/3&nbsp;em. Similar to space reduction mentioned above, in some typesetting styles, the spacing between Han and Western text has a fixed width (such as 1/4&nbsp;em). In such cases, adjustments are not allowed.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
             很多排版风格在实际处理上，只允许最大拉伸到三分之一汉字宽。与上述挤压处理一样，在一些排版风格中，中西间距固定默认宽度（如四分之一汉字宽），被排除在行内调整对象之外，不允许被拉伸。

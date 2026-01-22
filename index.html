@@ -2842,7 +2842,7 @@ var respecConfig = {
     <ol type="a">
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          At the end of a line: adjusted to fixed 1/2&nbsp;em.
+          Punctuation marks at the end of a line. Adjust them to a fixed width of half a Han character.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行末的标点。调成固定的半个汉字宽。
@@ -2865,7 +2865,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Spacing between Western text: for lines with numerous instances of Western text, their spacing should be processed at the same time, with equal treatment. The minimum space between each Western text should be 1/4&nbsp;em.
+          Spacing between Western text: for lines with several Western words, their spacing should be processed at the same time, with equal treatment. The minimum space between two Western words should be 1/4&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的西文词距。一行内若有多处西文词距，应该同时、同等量处理，每个西文词距最小可以挤压到四分之一汉字宽。
@@ -2877,7 +2877,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Interpuncts: space reduction must take place equally on both sides of the character. The minimum space is 0, whereby the interpunct ends up being 1/2&nbsp;em.
+          Interpuncts: reduce space eually on both sides of the character. The minimum space is 0, which results of an interpunct with 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的间隔号。挤压时必须同时从字面两侧、同等量处理，最小挤到0，即变成半个汉字字宽。
@@ -2889,7 +2889,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Brackets: space reduction can take place before the opening bracket and after the closing bracket. If multiple brackets occur within the same line, their space reduction should be processed at the same time, with equal treatment. Space can be reduced until the bracket is 1/2&nbsp;em.
+          Brackets: space can be reduced before an opening bracket and after an closing bracket. If multiple brackets occur within the same line, space reduction should be processed in the same way. Space can be reduced until the bracket is 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的夹注符号。可以对开始夹注符号的前侧、结束夹注符号的后侧进行挤压，最小可以挤压到半个汉字字宽。一行内如有多处，应该同时、同等量处理。
@@ -2901,7 +2901,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Commas, secondary commas and semi-colons: space reduction should follow [[[#h-punctuation_adjustment_space]]]. Spacing can be reduced at the end of the punctuation mark or equally on either side. If multiple of such punctuation marks occur within the same line, their space reduction should be processed at the same time, with equal treatment. Space can be reduced until the punctuation mark is 1/2&nbsp;em.
+          Commas, secondary commas and semi-colons: space reduction should follow [[[#h-punctuation_adjustment_space]]]. Spacing can be reduced at the end of the punctuation mark, or equally on both sides. If multiple punctuation marks of this kind occur within the same line, their space should be reduced in the same way. Space can be reduced until the punctuation mark is 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的逗号、顿号、分号。挤压空间依照[[[#h-punctuation_adjustment_space]]]，可以是后侧，也可以是字面两侧同时，最小可以挤压到半个汉字字宽。一行内如有多处，应该同时、同等量处理。
@@ -2923,7 +2923,7 @@ var respecConfig = {
         </p>
         <aside class="note">
           <p its-locale-filter-list="en" lang="en" class="checkme">
-            Certain typesetting styles have a fixed default spacing between Han characters and Western texts, for example 1/4&nbsp;em, in such cases, adjustment is not allowed.
+            Certain typesetting styles require a fixed spacing between Han characters and Western texts, for example 1/4&nbsp;em, in such cases, adjustment is not allowed.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
             在一些排版风格中，中西间距固定默认宽度（如四分之一汉字宽），被排除在行内调整对象之外，不允许被挤压。
@@ -2936,7 +2936,7 @@ var respecConfig = {
 
       <li>
         <p its-locale-filter-list="en" lang="en" class="checkme">
-          Periods, question marks and exclamation marks: in accordance to [[[#h-punctuation_adjustment_space]]], if there is available space, spacing can be reduced up until the minimum size of 1/2&nbsp;em.
+          Periods, question marks and exclamation marks: in accordance with [[[#h-punctuation_adjustment_space]]], if space is available, reduce the spacing down to the minimum size of 1/2&nbsp;em.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           位于行内的句号、问号、感叹号。依照[[[#h-punctuation_adjustment_space]]]，如果有调整空间则可以挤压，最小挤为半个汉字字宽。

@@ -18,6 +18,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 ---
 
+
 ### Chinese, Simplified & Traditional
 - **Chinese Script Resources** • [DNOTE](https://www.w3.org/TR/hani-lreq) • [*Editor's draft*](https://www.w3.org/International/clreq/resources/) • [*Latest commits*](https://github.com/w3c/clreq/commits/gh-pages/resources)
 - **Chinese Layout Requirements** • [DNOTE](https://www.w3.org/TR/clreq) • [*Editor's draft*](https://www.w3.org/International/clreq/) • [*Latest commits*](https://github.com/w3c/clreq/commits/gh-pages/index.html)

@@ -2715,7 +2715,7 @@ var respecConfig = {
       </li>
       <li>
         <p its-locale-filter-list="en" lang="en">
-          Instances where punctuation marks occur consecutively and still remain uneven after [[[#h-adjustment_of_adjacent_punctuation_marks]]];
+          Instances where adjacent punctuation marks still remain uneven after [[[#h-adjustment_of_adjacent_punctuation_marks]]];
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           标点符号连续出现，且按照[[[#h-adjustment_of_adjacent_punctuation_marks]]]的原则性调整之后与事先设定的行长不一致；
@@ -3093,7 +3093,7 @@ var respecConfig = {
     </li>
   </ol>
   <div class="note" id="n039">
-    <p its-locale-filter-list="en" lang="en">When using grid alignment, it is recommended to deal with line end punctuation marks by hanging the first of them outside the type area as mentioned in section [[[#hanging_punctuation_marks_at_line_end]]]. In situations that involve consecutive punctuation marks, the second and following punctuation marks are allowed to appear at the line start.</p>
+    <p its-locale-filter-list="en" lang="en">When using grid alignment, it is recommended to deal with line end punctuation marks by hanging the first of them outside the type area as mentioned in section [[[#hanging_punctuation_marks_at_line_end]]]. In situations that involve multiple adjacent punctuation marks, the second and following punctuation marks are allowed to appear at the line start.</p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">纵横对齐时，可配合[[[#hanging_punctuation_marks_at_line_end]]]节的行尾点号悬挂方式处理标点禁则，若遇两个以上连续标点时，第二个及其后之标点可令其出现于行首。</p>
     <p its-locale-filter-list="zh-hant" lang="zh-hant">縱橫對齊時，可配合[[[#hanging_punctuation_marks_at_line_end]]]節的行尾點號懸掛方式處理標點禁則，若遇兩個以上連續標點時，第二個及其後之標點可令其出現於行首。</p>
   </div>
@@ -3273,10 +3273,11 @@ var respecConfig = {
         <span its-locale-filter-list="zh-hant" lang="zh-hant">標點符號的寬度調整</span>
       </h4>
 
+      <span id="compression_rules_for_adjacent_punctuation_marks"></span>
       <!-- oldid -->
       <span id="compression_rules_for_consecutive_punctuation_marks"></span>
 
-      <p its-locale-filter-list="en" lang="en">Punctuation marks between characters (except for two-em dash and ellipsis) usually occupy 1&nbsp;em, making it easy to recognize and lay out. Some layout styles do not adjust the punctuation width at all. However, in order to make the the composition tighter and more readable, and when implementing [[[#prohibition_rules_for_line_start_end]]], the width of the punctuation marks may be adjusted. Whether to adjust depends on the judgment of the typesetter. Many publications in Taiwan do not adjust punctuation width, while most publications in Mainland China and Hong Kong do adjust punctuation width. Punctuation width adjustment usually occurs in two situations: 1) when consecutive punctuation marks appear 2) when the punctuation mark appears at the beginning or end of a line. There are more than one style of width adjustment, and only the basic principles are explained below.</p>
+      <p its-locale-filter-list="en" lang="en">Punctuation marks between characters (except for two-em dash and ellipsis) usually occupy 1&nbsp;em, making it easy to recognize and lay out. Some layout styles do not adjust the punctuation width at all. However, in order to make the the composition tighter and more readable, and when implementing [[[#prohibition_rules_for_line_start_end]]], the width of the punctuation marks may be adjusted. Whether to adjust depends on the judgment of the typesetter. Many publications in Taiwan do not adjust punctuation width, while most publications in Mainland China and Hong Kong do adjust punctuation width. Punctuation width adjustment usually occurs in two situations: 1) when adjacent punctuation marks appear 2) when the punctuation mark appears at the beginning or end of a line. There are more than one style of width adjustment, and only the basic principles are explained below.</p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans">标注在字间的标点符号（除乙式括号、破折号、省略号以外）通常占一个汉字宽度，使其易于识别、适合配置及排版，有些排版风格完全不对标点宽度进行任何调整。但是为了让文字体裁更加紧凑易读，以及执行[[[#prohibition_rules_for_line_start_end]]]时，就需要对标点符号的宽度进行调整。是否调整取决于对排版风格的判断，台湾的很多印刷品都采用不调整的风格；而在中国大陆和香港的出版物中，多数采取调整的风格。标点符号宽度调整通常分为两种情形：1. 标点符号连续出现 2.标点出现在行首或行尾。调整时的风格不尽相同，下文仅阐述基本原则。</p>
       <p its-locale-filter-list="zh-hant" lang="zh-hant">標註在字間的標點符號（除乙式括號、破折號、省略號以外）通常占一個漢字寬度，使其易於識別、適合配置及排版，有些排版風格完全不對標點寬度進行任何調整。但是為了讓文字體裁更加緊湊易讀，以及執行[[[#prohibition_rules_for_line_start_end]]]時，就需要對標點符號的寬度進行調整。是否調整取決於對排版風格的判斷，臺灣的很多印刷品都採用不調整的風格；而在中國大陸和香港的出版物中，多數採取調整的風格。標點符號寬度調整通常分為兩種情形：1. 標點符號連續出現 2.標點出現在行首或行尾。調整時的風格不盡相同，下文僅闡述基本原則。</p>
 
@@ -5503,10 +5504,10 @@ var respecConfig = {
         <td lang="zh-Hant">標點符號擠壓</td>
         <td lang="zh-Hans">标点符号挤压</td>
         <td>biāodiǎn fúhào jǐyā</td>
-        <td>compression rules for consecutive punctuation marks</td>
+        <td>compression rules for adjacent punctuation marks</td>
         <td>
           <p its-locale-filter-list="en" lang="en">The rules for type setting by compressing the space for
-            the punctuation marks in the beginning or ending of a line or the space between consecutive punctuation marks.</p>
+            the punctuation marks in the beginning or ending of a line or the space between adjacent punctuation marks.</p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">对位于行首、行尾或连续存在标点符号的富余空间进行调整的排版方式。</p>
           <p its-locale-filter-list="zh-hant" lang="zh-hant">對位於行首、行尾或連續存在標點符號的富餘空間進行調整的排版方式。</p>
         </td>

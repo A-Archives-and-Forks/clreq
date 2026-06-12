@@ -188,7 +188,8 @@
       toggle$rootClass(lang);
       showAndHideLang(lang);
       replaceBoilerplateText(lang);
-    };
+      updateSelectedLanguageButton(lang)
+      };
     function addSelfLinks() {
       $$("li[id]").forEach(function($elmt) {
         const elementId = $elmt.getAttribute("id");
@@ -214,3 +215,24 @@
     addSelfLinks();
   })();
 })();
+
+
+
+
+
+// Highlight the selected language button
+function updateSelectedLanguageButton(lang) {
+
+    const btnNodeList = document.querySelectorAll('#langSwitch > button')
+    const btnNodeListArray = Array.from(btnNodeList)
+
+    btnNodeListArray.forEach($btn => {
+        // Extract the argument inside onclick="switchLang('xxx')"
+        const onclickValue = $btn.getAttribute('onclick') || ''
+        const match = onclickValue.match(/switchLang\('([^']+)'\)/)
+        const btnLang = match ? match[1] : null
+
+        if (btnLang === lang) $btn.classList.add('selectedLanguage')
+        else $btn.classList.remove('selectedLanguage')
+        })
+    }

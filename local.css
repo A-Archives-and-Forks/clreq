@@ -131,28 +131,6 @@ kbd {
 
 code { color: #A52A2A; }
 
-#langSwitch {
-	position: fixed;
-	top: -14px;
-	z-index: 10000;
-	top: 100px;
-	right: 10px;
-	width: 5em;
-	text-align: right;
-	}
-#langSwitch button {
-	background: #FFF none repeat scroll 0% 0%;
-	border: 1px solid #CCC;
-	border-radius: 5px;
-	}
-#langSwitch button:lang(zh-hans) {
-	background-color: #fbc481;
-	}
-
-#langSwitch button:lang(zh-hant) {
-	background-color: #9fe19f;
-	}
-
 
 .translateme, .retranslateme {
   background-color: #F3F3C3;
@@ -431,3 +409,48 @@ section li[id] > a.self-link::before {
   text-decoration: none;
   color: black;
 }
+
+
+
+
+#langSwitch {
+	position: fixed;
+	/*top: -14px;*/
+	z-index: 10000;
+	top: 180px;
+	right: 10px;
+	width: 8em;
+	text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-content: end;
+    background-color: white;
+    padding:1em;
+	}
+#langSwitch button {
+	background: #FFF none repeat scroll 0% 0%;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+    display: block;
+    margin-block: .2em;
+	}
+#langSwitch button:lang(zh-hans) {
+	background-color: #fbc481;
+	}
+
+#langSwitch button:lang(zh-hant) {
+	background-color: #9fe19f;
+	}
+
+.selectedLanguage::before {
+    content: '→';
+    margin-inline-end:.3em;
+    font-size: 1em;
+    text-align: center;
+    }
+#languageChoiceLabel {
+    font-size: 70%;
+    display: block;
+    align-self: center;
+    }
+

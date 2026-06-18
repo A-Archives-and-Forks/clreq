@@ -1,29 +1,45 @@
+// @ts-check
 'use strict';
 
 void function() {
 
-type Language = 'en' | 'zh-hant' | 'zh-hans' | 'all'
+/**
+ * @typedef {'en' | 'zh-hant' | 'zh-hans'} Lang
+ */
 
-interface LocaleData {
-  selector: Record<string, string>
-  fig: string
-  collapseSidebar: string
-  expandSidebar: string
-  jumpToToc: string
-  summary?: string
-  dt: Record<string, string>
-  dd: Record<string, string>
-}
+/**
+ * @typedef {'all' | Lang} LangOrAll
+ */
 
-interface L10N {
-  en: LocaleData
-  'zh-hant': LocaleData
-  'zh-hans': LocaleData
-}
+/**
+ * @typedef {Record<string, string>} SelectorMap
+ */
 
-const LANG_LIST: Language[] = ['en', 'zh-hant', 'zh-hans']
+/**
+ * @typedef {Object} L10nEntry
+ * @property {SelectorMap} selector - CSS selectors mapped to localized text
+ * @property {string} fig - Localized prefix for figure captions
+ * @property {string} collapseSidebar
+ * @property {string} expandSidebar
+ * @property {string} jumpToToc
+ * @property {string} [summary] - Localized summary text for the document details section
+ * @property {Record<string, string>} dt - Localized definition terms (dt elements)
+ * @property {Record<string, string>} dd - Localized definition descriptions (dd elements, may contain HTML)
+ */
 
-const L10N: L10N = {
+/**
+ * @typedef {Record<Lang, L10nEntry>} L10nMap
+ */
+
+/**
+ * @typedef {Window & typeof globalThis & { switchLang: (lang: LangOrAll) => void }} AppWindow
+ */
+
+/** @type {readonly Lang[]} */
+const LANG_LIST = ['en', 'zh-hant', 'zh-hans']
+
+/** @type {L10nMap} */
+const L10N = {
 	'en': {
     // CSS selectors for elements that need text replacement
     selector: {
@@ -125,23 +141,34 @@ const L10N: L10N = {
   },
 }
 
+/** @type {HTMLElement} */
 const $root = document.documentElement
-let $$hidden: object[] = []
 
-function arrayify(obj: any): any[] {
+/** @type {HTMLElement[]} */
+let $$hidden = []
+
+/**
+ * @template T
+ * @param {ArrayLike<T>} obj
+ * @returns {T[]}
+ */
+function arrayify(obj) {
 	return Array.from(obj)
 }
 
 /**
  * Convenience function for querySelectorAll that returns a proper Array.
- * @param selector - CSS selector string
- * @returns Array of matching DOM elements
+ * @param {string} selector - CSS selector string
+ * @returns {HTMLElement[]} Array of matching DOM elements
  */
-function $$(selector: string): HTMLElement[] {
+function $$(selector) {
 	return arrayify(document.querySelectorAll(selector))
 }
 
-function toggle$rootClass(lang: string): void {
+/**
+ * @param {LangOrAll} lang
+ */
+function toggle$rootClass(lang) {
   $root.lang = lang === 'all' ? 'en' : lang
 
 	if (lang === 'all') {
@@ -153,7 +180,10 @@ function toggle$rootClass(lang: string): void {
 	}
 }
 
-function showAndHideLang(lang: string): void {
+/**
+ * @param {LangOrAll} lang
+ */
+function showAndHideLang(lang) {
   // Show previously hidden parts:
   $$hidden
   .forEach(function($elmt) { Object.assign($elmt, { hidden: false }) })
@@ -171,7 +201,10 @@ function showAndHideLang(lang: string): void {
   )
 }
 
-function replaceBoilerplateText(lang: string): void {
+/**
+ * @param {LangOrAll} lang
+ */
+function replaceBoilerplateText(lang) {
   const l10n = L10N[lang === 'all' ? 'en' : lang]
 
   // Alter some basic headings, etc:
@@ -214,7 +247,7 @@ function replaceBoilerplateText(lang: string): void {
 
     // Special handling for bug tracker links (dd elements contain HTML)
     if (originalText === 'Bug tracker:') {
-      $dt.nextElementSibling!.innerHTML = l10n.dd['Bug tracker:']
+      $dt.nextElementSibling.innerHTML = l10n.dd['Bug tracker:']
     }
   })
 
@@ -223,12 +256,17 @@ function replaceBoilerplateText(lang: string): void {
   translateFixupStrings(lang)
 }
 
-let sidebarObserver: MutationObserver | null = null
+/** @type {MutationObserver | null} */
+let sidebarObserver = null
 
-function translateFixupStrings(lang: string): void {
+/**
+ * @param {LangOrAll} lang
+ */
+function translateFixupStrings(lang) {
   const l10n = L10N[lang === 'all' ? 'en' : lang]
 
-  const fixupIds: Record<string, keyof LocaleData> = {
+  /** @type {Record<string, keyof Pick<L10nEntry, 'collapseSidebar' | 'expandSidebar' | 'jumpToToc'>>} */
+  const fixupIds = {
     'toc-collapse-text': 'collapseSidebar',
     'toc-expand-text': 'expandSidebar',
     'toc-jump-text': 'jumpToToc',
@@ -252,7 +290,7 @@ function translateFixupStrings(lang: string): void {
     const toggle = document.getElementById('toc-toggle')
     if (toggle) {
       sidebarObserver = new MutationObserver(function() {
-        const currentLang = ($root.lang || 'en') as Language
+        const currentLang = /** @type {LangOrAll} */ ($root.lang || 'en')
         if (currentLang !== 'en') {
           translateFixupStrings(currentLang)
         }
@@ -265,17 +303,19 @@ function translateFixupStrings(lang: string): void {
 /**
  * Expose to global for now since respec will re-parse the entire document
  * and event bound will be lost.
+ * @param {LangOrAll} lang
  */
-window.switchLang = function(lang: string): void {
+/** @type {AppWindow} */ (/** @type {unknown} */ (window)).switchLang = function(lang) {
   toggle$rootClass(lang)
   showAndHideLang(lang)
   replaceBoilerplateText(lang)
+  updateSelectedLanguageButton(lang)
 }
 
 /**
  * Add self-link anchors for all p and li elements with id attributes
  */
-function addSelfLinks(): void {
+function addSelfLinks() {
   // Find all p and li elements that have an id attribute
   $$('li[id]')
   .forEach(function($elmt) {
@@ -302,7 +342,7 @@ function addSelfLinks(): void {
  * Note that this may still produce temporarily incorrect labelling
  * where text is awaiting translation.
  */
-function addLangAttr(): void {
+function addLangAttr() {
   toggle$rootClass('all')
 
   LANG_LIST
@@ -320,4 +360,19 @@ addLangAttr()
 addSelfLinks()
 }()
 
-export {};
+// Highlight the selected language button
+function updateSelectedLanguageButton(lang) {
+
+    const btnNodeList = document.querySelectorAll('#langSwitch > button')
+    const btnNodeListArray = Array.from(btnNodeList)
+
+    btnNodeListArray.forEach($btn => {
+        // Extract the argument inside onclick="switchLang('xxx')"
+        const onclickValue = $btn.getAttribute('onclick') || ''
+        const match = onclickValue.match(/switchLang\('([^']+)'\)/)
+        const btnLang = match ? match[1] : null
+
+        if (btnLang === lang) $btn.classList.add('selectedLanguage')
+        else $btn.classList.remove('selectedLanguage')
+        })
+    }

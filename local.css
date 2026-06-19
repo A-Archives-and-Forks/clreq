@@ -426,6 +426,7 @@ section li[id] > a.self-link::before {
     align-content: end;
     background-color: white;
     padding:1em;
+    border-radius: .75em;
 	}
 /* Tablets (portrait) */
 @media (max-width: 900px) {
@@ -433,8 +434,7 @@ section li[id] > a.self-link::before {
         width: 6em;
         padding-block-start: .25em;
         padding-block-end: 1em;
-        padding-inline-start: .75em;
-        padding-inline-end: 0;
+        padding-inline: .75em;
         margin: 0;
         top: auto;
         bottom:0;

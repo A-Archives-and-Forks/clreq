@@ -417,7 +417,7 @@ section li[id] > a.self-link::before {
 	position: fixed;
 	/*top: -14px;*/
 	z-index: 10000;
-	top: 180px;
+	top: 160px;
 	right: 10px;
 	width: 8em;
 	text-align: right;
@@ -427,6 +427,28 @@ section li[id] > a.self-link::before {
     background-color: white;
     padding:1em;
 	}
+/* Tablets (portrait) */
+@media (max-width: 900px) {
+    #langSwitch {
+        width: 6em;
+        padding-block-start: .25em;
+        padding-block-end: 1em;
+        padding-inline-start: .75em;
+        padding-inline-end: 0;
+        margin: 0;
+        top: auto;
+        bottom:0;
+        }
+    }
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    #langSwitch {
+        width: 5em;
+        padding-block-end: .5em;
+        }
+    }
+
 #langSwitch button {
 	background: #FFF none repeat scroll 0% 0%;
 	border: 1px solid #CCC;
